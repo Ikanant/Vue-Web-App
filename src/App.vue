@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <DisplayDataRespondToEvents/>
+    <DisplayListsAndConditionalLogic/>
   </div>
 </template>
 
 <script>
-import DisplayDataRespondToEvents from './components/DisplayDataRespondToEvents'
+import DisplayListsAndConditionalLogic from './components/DisplayListsAndConditionalLogic.vue'
 
 export default {
   name: 'app',
   components: {
-    DisplayDataRespondToEvents
+    DisplayListsAndConditionalLogic
   }
 }
 </script>
