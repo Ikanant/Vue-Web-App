@@ -10,15 +10,25 @@
         </div>
         <br/>
         <div id="inputBoxDiv">
-            <input type="text" style="margin-right: 20px;" placeholder="Insert Msg"/>
+            <input type="text" style="margin-right: 20px;" placeholder="ONE WAY BINDED"/>
             <label>{{message}}</label>
+        </div>
+        <br/>
+        <div id="inputBoxDiv">
+            <button style="margin-right: 20px;" @click="addNumber">Add Number:</button>
+            <label>{{counter}}</label>
+        </div>
+        <br/>
+        <div id="inputBoxDiv">
+            <input type="text" v-model="twoWayBindedMessage " style="margin-right: 20px;" placeholder="TWO WAY BINDED"/>
+            <label>{{twoWayBindedMessage}}</label>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'DisplayDataRespondToEvents',
+  name: 'DisplayDataRespondToEvents', 
    
   data() {
       return {
@@ -26,8 +36,16 @@ export default {
               title: "COOL TITLE !!"
           },
           message: '',
+          twoWayBindedMessage: '', 
+          counter: 0,
           google: "https://google.com",
           facebook: "https://facebook.com"
+      }
+  },
+
+  methods: {
+      addNumber() {
+          this.counter++;
       }
   }
 }
