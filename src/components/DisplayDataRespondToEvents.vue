@@ -38,6 +38,18 @@
             <br/>
             <div id="colorBar" class="barColor" v-bind:style="{'background-color': barColor}"></div>
         </div>
+        <br/>
+        <div id="radioButtonDiv">
+            <label>Pick another color:</label>
+            <select v-model="secondBarColor" v-on:keyup.esc="clearSelect">
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+                <option value="green">green</option>
+            </select>
+            <br/>
+            <label>Bar will be red if nothing selected: {{secondBarColor}}</label>
+            <div id="secondColorBar" v-bind:class="{ invalid : secondBarColor=='' }" class="barColor"></div>
+        </div>
     </div>
 </template>
 
@@ -54,6 +66,7 @@ export default {
           twoWayBindedMessage: '', 
           counter: 0,
           barColor: 'red',
+          secondBarColor: '',
           google: "https://google.com",
           facebook: "https://facebook.com"
       }
@@ -62,6 +75,9 @@ export default {
   methods: {
       addNumber() {
           this.counter++;
+      },
+      clearSelect() {
+          this.secondBarColor = '';
       }
   }
 }
@@ -72,5 +88,8 @@ export default {
         height: 10px;
         width: 100px;
         margin-left: 50%;
+    }
+    .invalid {
+        background-color: blueviolet
     }
 </style>
